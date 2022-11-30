@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-
+import axios from 'axios';
 
 const inputEl = document.querySelector("input");
 const btnEl = document.querySelector("button");
@@ -41,11 +41,13 @@ function onSearch(e) {
 
 async function pixabayAPI(value, page) {
   
-    BASE_URL = "https://pixabay.com/api/"
-    KEY_API = "31665473-d71629ddfe13db1f02d81492c"
-    const resp = await fetch(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=4`);
-    return await resp.json();
- 
+    const BASE_URL = "https://pixabay.com/api/"
+    const KEY_API = "31665473-d71629ddfe13db1f02d81492c"
+    // const resp = await fetch(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=4`);
+    // return await resp.json();
+    const response = await axios.get(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`);
+    return response.data;
+    
 }
 
 function createMarkup(arr) {
