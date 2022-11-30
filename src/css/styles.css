@@ -23,7 +23,7 @@ font-size: 16px;
   padding: 15px;
   padding-left: 38%;
 
-  background-color: aqua;
+  background-color:rgb(54, 88, 240);
 
 
 }
@@ -40,7 +40,19 @@ flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   
+    border: 1px solid #EEEEEE;
+    border-top: none;
+    padding: 20px 24px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
+.photo-card:hover,
+.photo-card:focus {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .info {
   display: flex;
   justify-content: space-between;
@@ -67,4 +79,20 @@ object-fit: cover;
   width: 350px;
   height: 234px;
   object-fit: cover;
+}
+
+.load-more {
+  margin-top: 25px;
+  margin-left: 42%;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(54, 88, 240);
+  border-color: transparent;
+  
+}
+
+.load-more:hover {
+  background-color: rgb(54, 88, 200) ;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }

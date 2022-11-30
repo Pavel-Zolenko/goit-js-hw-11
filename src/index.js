@@ -21,6 +21,10 @@ function onSearch(e) {
   listEl.innerHTML = "";
   counterClik = 1;
   const searchValue = inputEl.value.trim()
+  if (!searchValue) {
+     Notiflix.Notify.failure('Введите текс');
+        return
+    }
   btnLoadMore.removeAttribute("hidden", true)
     
   pixabayAPI(searchValue, page).then(data => {
@@ -39,7 +43,7 @@ async function pixabayAPI(value, page) {
   
     BASE_URL = "https://pixabay.com/api/"
     KEY_API = "31665473-d71629ddfe13db1f02d81492c"
-    const resp = await fetch(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`);
+    const resp = await fetch(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=4`);
     return await resp.json();
  
 }
