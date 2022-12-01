@@ -43,11 +43,9 @@ async function pixabayAPI(value, page) {
   
     const BASE_URL = "https://pixabay.com/api/"
     const KEY_API = "31665473-d71629ddfe13db1f02d81492c"
-    // const resp = await fetch(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=4`);
-    // return await resp.json();
-    const response = await axios.get(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=4`);
-    console.log(response.data)
-  return response.data;
+ 
+    const response = await axios.get(`${BASE_URL}?key=${KEY_API}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40`);
+    return response.data;
     
 }
 
